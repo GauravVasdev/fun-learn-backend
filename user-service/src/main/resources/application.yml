@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.yaml
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/mg_user_service_db?createDatabaseIfNotExist=true
+    password: ABC123
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
