@@ -1,4 +1,9 @@
 package org.example.service;
 
-public class IUserService {
+import org.example.http.request.CreateUserRequest;
+import org.example.http.response.CreateUserResponse;
+
+public interface IUserService {
+
+    CreateUserResponse createUser(CreateUserRequest createUserRequest);
 }
