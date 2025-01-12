@@ -17,4 +17,6 @@ public class UserServiceConstants {
     public static final String USER_SERVICE_INSTANCE_NAME_CK = "userService";
 
     public static final String GET_ALL_ORDER_FALLBACK_METHOD_NAME_CK = "getAllAvailableProducts";
+
+    public static final String GET_USER_BY_ID = GET_BASE_URL + "/{userId}";
 }

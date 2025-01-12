@@ -1,8 +1,10 @@
 package org.example.service.impl;
 
 import org.example.clients.ICatalogapi;
+import org.example.exception.ResourceNotFoundException;
 import org.example.http.request.CreateUserRequest;
 import org.example.http.response.CreateUserResponse;
+import org.example.http.response.GetUserByIdResponse;
 import org.example.http.response.custom.GetAllOrderResponse;
 import org.example.model.Users;
 import org.example.repository.IUserRepository;
@@ -37,5 +39,12 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<GetAllOrderResponse> getAllOrders() {
         return catalogapi.getAllOrders();
+    }
+
+
+    @Override
+    public GetUserByIdResponse getUserById(Integer id) {
+        Users user =  userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User does not found id : " + id));
+        return userServiceMapper.mapUserToGetUserByIdResponse(user);
     }
 }
