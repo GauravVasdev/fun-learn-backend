@@ -39,22 +39,5 @@ public class UserApiController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping(UserServiceConstants.GET_ALL_ORDER)
-    @CircuitBreaker(name = UserServiceConstants.USER_SERVICE_INSTANCE_NAME_CK, fallbackMethod = UserServiceConstants.GET_ALL_ORDER_FALLBACK_METHOD_NAME_CK)
-    public ResponseEntity<List<GetAllOrderResponse>> getAllOrders(){
-        List<GetAllOrderResponse> orders = userService.getAllOrders();
-        return new ResponseEntity<>(orders, HttpStatus.OK);
-    }
-
-    public ResponseEntity<List<GetAllOrderResponse>> getAllAvailableProducts(Exception e){
-        List<GetAllOrderResponse> getAllOrderResponses = List.of(
-                new GetAllOrderResponse(1, "testName", "testCategroy", "testDescription"));
-        return new ResponseEntity<>(getAllOrderResponses, HttpStatus.OK);
-    }
-
-    @GetMapping("/home")
-    public String getUser(){
-        return "Hello";
-    }
 }
 
