@@ -2,6 +2,7 @@ package org.example.service.mapper;
 
 import org.example.http.request.CreateUserRequest;
 import org.example.http.response.CreateUserResponse;
+import org.example.http.response.GetUserByIdResponse;
 import org.example.model.Users;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -13,4 +14,6 @@ public interface IUserServiceMapper {
     Users mapCreateUserRequestDTOtoUsers(CreateUserRequest createUserRequest);
 
     CreateUserResponse mapUsersToCreateUserResponseDTO(Users users);
+
+    GetUserByIdResponse mapUserToGetUserByIdResponse(Users user);
 }
