@@ -45,3 +45,10 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 3
         slidingWindowSize: 10
         slidingWindowType: COUNT_BASED
+
+service:
+  catalog:
+    name: catalog-service
+    host: localhost
+    port: 8083
+    url: ${service.catalog.host}:${service.catalog.port}

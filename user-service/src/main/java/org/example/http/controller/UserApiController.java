@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping(UserServiceConstants.BASE_URL)
+@RequestMapping(UserServiceConstants.USER_BASE_URL)
 public class UserApiController {
 
     private final IUserService userService;
@@ -32,8 +32,8 @@ public class UserApiController {
         return new ResponseEntity<>(createUserResponse, HttpStatus.CREATED);
     }
 
-    @GetMapping("/get-all-orders")
-    @CircuitBreaker(name = "userService", fallbackMethod = "getAllAvailableProducts")
+    @GetMapping(UserServiceConstants.GET_ALL_ORDER)
+    @CircuitBreaker(name = UserServiceConstants.USER_SERVICE_INSTANCE_NAME_CK, fallbackMethod = UserServiceConstants.GET_ALL_ORDER_FALLBACK_METHOD_NAME_CK)
     public ResponseEntity<List<GetAllOrderResponse>> getAllOrders(){
         List<GetAllOrderResponse> orders = userService.getAllOrders();
         return new ResponseEntity<>(orders, HttpStatus.OK);

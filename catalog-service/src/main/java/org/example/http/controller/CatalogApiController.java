@@ -1,5 +1,6 @@
 package org.example.http.controller;
 
+import org.example.constant.CatalogServiceConstants;
 import org.example.http.response.GetAllOrderResponse;
 import org.example.service.ICatalogService;
 import org.springframework.http.HttpStatus;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping(CatalogServiceConstants.ORDER_BASE_URL)
 public class CatalogApiController {
 
     private final ICatalogService catalogService;
@@ -21,7 +22,7 @@ public class CatalogApiController {
         this.catalogService = catalogService;
     }
 
-    @GetMapping("/get/all-order")
+    @GetMapping(CatalogServiceConstants.GET_ALL_ORDER)
     public ResponseEntity<List<GetAllOrderResponse>> getAllOrders(){
         List<GetAllOrderResponse> orders = catalogService.getAllOrders();
         return new ResponseEntity<>(orders, HttpStatus.OK);
