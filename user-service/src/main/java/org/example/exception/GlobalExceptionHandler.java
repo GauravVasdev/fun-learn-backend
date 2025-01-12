@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<GlobalExceptionResponse> resourceNotFoundException(Exception ex){
-        GlobalExceptionResponse globalExceptionResponse = new GlobalExceptionResponse(ex.getMessage(), HttpStatus.NOT_FOUND.value());
+    public ResponseEntity<GlobalExceptionResponse> resourceNotFoundException(ResourceNotFoundException resourceNotFoundException){
+        GlobalExceptionResponse globalExceptionResponse = new GlobalExceptionResponse(resourceNotFoundException.getMessage(), HttpStatus.NOT_FOUND.value());
         return new ResponseEntity<>(globalExceptionResponse, HttpStatus.NOT_FOUND);
     }
 }
