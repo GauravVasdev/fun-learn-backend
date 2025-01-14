@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "${service.catalog.name}", url = "${service.catalog.url}")
+@FeignClient(name = "${service.catalog.name}")
 public interface ICatalogapi {
 
     @GetMapping(UserServiceConstants.ORDER_BASE_URL + UserServiceConstants.GET_ALL_ORDER)
