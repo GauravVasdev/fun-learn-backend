@@ -2,7 +2,7 @@ package org.example.constant;
 
 public class UserServiceConstants {
 
-    public static final String USER_BASE_URL = "/users";
+    public static final String USER_BASE_URL = "/user";
 
     public static final String ORDER_BASE_URL = "/order";
 
