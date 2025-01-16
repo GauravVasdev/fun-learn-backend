@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(UserServiceConstants.ORDER_BASE_URL)
+@RequestMapping(UserServiceConstants.USER_BASE_URL + UserServiceConstants.ORDER_BASE_URL)
 public class OrderApiController {
 
     private final IUserService userService;

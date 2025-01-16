@@ -10,7 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/api-gateway-service" />
             <option value="$PROJECT_DIR$/catalog-service" />
+            <option value="$PROJECT_DIR$/config-service" />
             <option value="$PROJECT_DIR$/eureka-registy-service" />
             <option value="$PROJECT_DIR$/user-service" />
           </set>
