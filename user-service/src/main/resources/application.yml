@@ -54,6 +54,13 @@ resilience4j:
         maxAttempts: 3
         waitDuration: 5s
 
+  ratelimiter:
+    instances:
+      userService:
+        limitRefreshPeriod: 4s
+        limitForPeriod: 2
+        timeoutDuration: 0s
+
 service:
   catalog:
     name: catalog-service
